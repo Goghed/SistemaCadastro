@@ -27,7 +27,12 @@
   <div class="container">
     <h1> Cadastro de Estudantes </h1>
 
-    <app-estudantes></app-estudantes>
+    <nav>
+      <a routerLink="/dashboard">Dashboard</a>
+      <a routerLink="/estudantes">Estudantes</a>
+    </nav>
+
+    <router-outlet></router-outlet>
     <app-messages></app-messages>
 
   </div> 
