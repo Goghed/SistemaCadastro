@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EstudantesComponent } from './estudante/estudante.component';
+import { EstudantesComponent } from './estudantes/estudantes.component';
+import { EstudanteDetalheComponent } from './estudante-detalhe/estudante-detalhe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EstudantesComponent
+    EstudantesComponent,
+    EstudanteDetalheComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
+    BrowserModule,    
     FormsModule
   ],
   providers: [],
