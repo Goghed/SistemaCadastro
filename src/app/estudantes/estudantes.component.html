@@ -1,6 +1,6 @@
 <h2>Meus Estudantes Cadastrados</h2>
 <ul class="estudantes">
-  <li *ngFor="let estudante of estudantes"
+  <li *ngFor="let estudante of estudante"
     [class.selected]="estudante === selectedEstudante"
     (click)="onselect(estudante)">
     <span class="badge">{{estudante.id}}</span> {{estudante.nome}}

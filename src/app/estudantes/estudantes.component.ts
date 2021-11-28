@@ -15,7 +15,7 @@ export class EstudantesComponent implements OnInit {
   selectedEstudante?: Estudante;
   estudante: Estudante[] = [];
 
-  constructor(private estudanteService: EstudanteService, private messageService: MessageService) { }
+  constructor(private estudanteService: EstudanteService, private MessageService: MessageService) { }
 
   ngOnInit(): void {
     this.getEstudantes();
@@ -23,12 +23,12 @@ export class EstudantesComponent implements OnInit {
 
   onselect(estudante:Estudante): void {
     this.selectedEstudante = estudante;
-    this.messageService.add('EstudantesComponents: Selected estudante id=${estudante.id}');
+    this.MessageService.add('EstudantesComponents: Selected estudante id=${estudante.id}');
   }
 
   getEstudantes(): void {
     this.estudanteService.getEstudantes()
-      .subscribe(estudantes => this.estudantes = estudantes);
+      .subscribe(estudantes => this.estudante = estudantes);
 
   }
 
