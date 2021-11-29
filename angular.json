@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "8f783a8f-50b4-41ea-b835-52f49cf1c68d"
+    "analytics": "8a529095-a1e3-480c-b8a5-366201ef13ff"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "SistemaCadastro": {
+    "angular.io-example": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/SistemaCadastro",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "SistemaCadastro:build:production"
+              "browserTarget": "angular.io-example:build:production"
             },
             "development": {
-              "browserTarget": "SistemaCadastro:build:development"
+              "browserTarget": "angular.io-example:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "SistemaCadastro:build"
+            "browserTarget": "angular.io-example:build"
           }
         },
         "test": {
@@ -101,9 +101,21 @@
             ],
             "scripts": []
           }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "angular.io-example:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "angular.io-example:serve:production"
+            }
+          }
         }
       }
     }
   },
-  "defaultProject": "SistemaCadastro"
+  "defaultProject": "angular.io-example"
 }
