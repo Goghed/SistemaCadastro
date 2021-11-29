@@ -1,10 +1,44 @@
-<h2>Meus Estudantes Cadastrados</h2>
+<h2>Cadastrar Estudantes</h2>
+
+<div>
+  <label for="new-estudante">Estudante nome: </label>
+  <input id="new-estudante" #Estudantenome />
+
+  <label for="new-curso">Curso Cadastrado: </label>
+  <input id="new-curso" #Estudantecurso />
+
+  <div class="container">
+    <div class="semestre">
+      <label for="new-semestre">Semestre: </label>
+      <input id="new-semestre" #Estudantesemestre />
+    </div>
+
+    <div class="sexo">
+      <label for="new-sexo">Sexo: </label>
+      <input id="new-sexo" #Estudantesexo />
+    </div>
+
+    <div class="idade">
+      <label for="new-idade">Idade: </label>
+      <input id="new-idade" #Estudanteidade />
+    </div>    
+  </div>
+
+  
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" (click)="add(Estudantenome.value, Estudantecurso.value); Estudantenome.value='';Estudantecurso.value=''">
+    Cadastrar Estudante
+  </button> 
+</div>
+
 <ul class="estudantes">
-  <li *ngFor="let estudante of estudantes"
-    [class.selected]="estudante === selectedEstudante"
-    (click)="onselect(estudante)">
-    <span class="badge">{{estudante.id}}</span> {{estudante.nome}}
+  <li *ngFor="let estudante of estudantes">
+    <a routerLink="/detail/{{estudante.id}}">
+      <span class="badge">{{estudante.id}}</span> {{estudante.nome}} {{estudante.curso}}
+    </a>
+     
+    <button class="delete" title="deletar estudante"
+      (click)="delete(estudante)">Deletar</button>
   </li>
 </ul>
-
-<app-estudante-detalhe [estudante]="selectedestudante"></app-estudante-detalhe>

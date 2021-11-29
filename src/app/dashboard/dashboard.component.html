@@ -1,7 +1,9 @@
-<h2>Top Estudantes</h2>
+<h2>Melhores estudantes</h2>
 <div class="estudantes-menu">
   <a *ngFor="let estudante of estudantes"
-    routerLink="/detalhe/{{estudante.id}}">
-    {{estudante.nome}}
+      routerLink="/detail/{{estudante.id}}">
+      {{estudante.nome}}
   </a>
 </div>
+
+<app-estudante-search></app-estudante-search>

@@ -9,16 +9,15 @@ import { EstudanteService } from '../estudante.service';
 })
 export class DashboardComponent implements OnInit {
   estudantes: Estudante[] = [];
-  estudanteService: any;
 
-  constructor(private heroService: EstudanteService) { }
+  constructor(private EstudanteService: EstudanteService) { }
 
   ngOnInit(): void {
-    this.getEstudantes();
+    this.getestudantes();
   }
 
-  getEstudantes(): void {
-    this.estudanteService.getEstudantes()
-      .subscribe((estudantes: Estudante[]) => this.estudantes = estudantes.slice(1, 5));
+  getestudantes(): void {
+    this.EstudanteService.getestudantes()
+      .subscribe(estudantes => this.estudantes = estudantes.slice(1, 5));
   }
 }
