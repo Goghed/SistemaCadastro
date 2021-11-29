@@ -9,6 +9,7 @@ import { EstudanteService } from '../estudante.service';
 })
 export class DashboardComponent implements OnInit {
   estudantes: Estudante[] = [];
+  estudanteService: any;
 
   constructor(private heroService: EstudanteService) { }
 
@@ -18,6 +19,6 @@ export class DashboardComponent implements OnInit {
 
   getEstudantes(): void {
     this.estudanteService.getEstudantes()
-      .subscribe(estudantes => this.estudantes = estudantes.slice(1, 5));
+      .subscribe((estudantes: Estudante[]) => this.estudantes = estudantes.slice(1, 5));
   }
 }

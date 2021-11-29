@@ -4,12 +4,13 @@ import { Estudante } from '../estudante';
 import { EstudanteService } from '../estudante.service';
 
 @Component({
-  selector: 'app-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.css']
+  selector: 'app-estudantes',
+  templateUrl: './estudantes.component.html',
+  styleUrls: ['./estudantes.component.css']
 })
 export class EstudantesComponent implements OnInit {
   estudante_service: Estudante[] = [];
+  estudantes: Estudante[] | undefined;
 
   constructor(private estudanteService: EstudanteService) { }
 
@@ -18,7 +19,7 @@ export class EstudantesComponent implements OnInit {
   }
 
   getEstudantes(): void {
-    this.estudanteService.getEstudante()
+    this.estudanteService.getEstudantes()
     .subscribe(estudantes => this.estudantes = estudantes);
   }
 }
